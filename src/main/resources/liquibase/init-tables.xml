@@ -1,0 +1,29 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="97112023_create_socks" author="katiavasileva">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="socks"/>
+            </not>
+        </preConditions>
+        <createTable tableName="socks">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="socks_pk"/>
+            </column>
+            <column name="color" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cotton_part" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="quantity" type="integer">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
