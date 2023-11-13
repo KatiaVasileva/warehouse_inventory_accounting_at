@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import ru.skypro.warehouse_inventory_accounting_at.service.SocksService;
 @RestController
 @RequestMapping("/api/socks")
 @RequiredArgsConstructor
+@Tag(name = "Учет носков", description = "Регистрация прихода и отпуска носков, а также получение информации об их количестве")
 public class SocksController {
 
     private final SocksService socksService;
